@@ -1,3 +1,23 @@
+This is the Github repository for the publication "Genome-scale pan-cancer interrogation of lncRNA dependencies using CasRx" from Montero, Trozzo, et al. Nature Methods, 2024
+
+Here you can find pipelines and scripts for CasRx gRNA arrays design, gRNA arrays quantification from amplicon-seq data and the computational analysis of the CasRx lncRNAs screens
+
+#### Abstract
+Although lncRNAs dominate the transcriptome, their functions are largely unexplored. lncRNA
+characteristics, such as extensive overlap with coding and regulatory sequence restrict their systematic
+interrogation by DNA-directed perturbation. Here, we developed genome-scale lncRNA-transcriptome
+screening using Cas13d/CasRx. We show that RNA-targeting overcomes limitations inherent to other
+screening methods, thereby considerably expanding the explorable space of the lncRNAome. By
+evolving the screening system towards pan-cancer applicability, it supports molecular and phenotypic
+data integration to contextualize screening hits or infer lncRNA function. We thereby addressed
+challenges posed by the enormous transcriptome size and tissue-specificity through a size-reduced
+multiplexed gRNA-library targeting 24,171 lncRNA-families. Its rational design incorporates target
+prioritization based on expression, evolutionary conservation, and tissue-specificity, thereby reconciling
+high discovery-power and pan-cancer representation with scalable experimental throughput. Applied
+across entities, the screening platform identified numerous context-specific and common-essential
+lncRNAs. Our work sets the stage for systematic exploration of lncRNA biology in health and disease.
+
+
 # Array CRISPR/CasRx counting pipeline
 
 ## Description
