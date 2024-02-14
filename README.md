@@ -1,4 +1,4 @@
-This is the Github repository for the publication "Genome-scale pan-cancer interrogation of lncRNA dependencies using CasRx" from Montero, Trozzo, et al. Nature Methods, 2024
+This is the Github repository for the publication **"Genome-scale pan-cancer interrogation of lncRNA dependencies using CasRx"** from Montero, Trozzo, et al. Nature Methods, 2024
 
 Here you can find pipelines and scripts for CasRx gRNA arrays design, gRNA arrays quantification from amplicon-seq data and the computational analysis of the CasRx lncRNAs screens
 
