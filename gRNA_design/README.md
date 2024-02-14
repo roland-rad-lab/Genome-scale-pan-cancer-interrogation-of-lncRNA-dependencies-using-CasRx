@@ -19,18 +19,23 @@ This pipeline is is able to design CasRx gRNA arrays based on a number of user i
 ##### input_type
 The user can chose between three types of input: Ensembl Transcript ID (1), sequence (2) or Genomic coordinates (3). 
 For Ensembl Transcript ID (1), a txt file with a list of Ensembl Transcript IDs and no header has to be provided (see example below).
+
 |   |
 | --- |
 | ENST00000380152 |
 | ENST00000614259 |
 | ... |
+
 For sequence (2), a csv file with two columns (IDs and sequence) has to be provided (see example below).
+
 | IDs | sequence |
 | --- | --- |
 | target1 | ATCGACGATCGACTGGGGCTATCAGTGGCCCC |
 | target2 | GCATGCGGCCTTTAATGCACGGATTACTGAGCAGCGTTAA |
 | ... | ... |
+
 For Genomic Coordinates (3), a csv file with the transcript ID, chr, start, end and strand for each exon forming the transcript (common id) has to be provided (see example below).
+
 | IDs | chr | start | end | strand |
 | --- | --- | --- | --- | --- |
 | transcript1 | 1 | 1732257 | 1732523 | - |
