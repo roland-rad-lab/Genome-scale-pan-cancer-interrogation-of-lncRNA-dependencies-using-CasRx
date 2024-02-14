@@ -1,0 +1,8 @@
+info	test_rep1
+mapping_to_the_same_guide	50
+reads_processed_R1	50
+reads_processed_R2	50
+reads_that_failed_to_align_R1	0
+reads_that_failed_to_align_R2	0
+reads_with_at_least_one_reported_alignment_R1	50
+reads_with_at_least_one_reported_alignment_R2	50
