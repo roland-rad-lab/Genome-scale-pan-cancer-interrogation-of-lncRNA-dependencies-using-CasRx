@@ -10,6 +10,7 @@ The input file must be a tsv file with the following format:
 | ENST00000005284_1 | ENST00000005284 | 102.77 | 180.59 | 174.31 | 88.24 | ... |
 | ENST00000005284_2 | ENST00000005284 | 225.20 | 114.31 | 334.77 | 356.60 | ... |
 | ... | ... | ... | ... | ... | ... | ... | 
+
 Where ***sgRNA*** is the column containing a unique sgRNA identifier; ***Gene*** is the column containing the Gene name corresponding to the sgRNA; ***Library_rep1*** is the column where the sequenced library normalized counts are represented (There can be more than one replicate for the Library, e.g. Library_rep2) and the rest of the columns contain the normalized counts for each replicate of each cell line in the form _CellLineName_rep[n]_.
 
 ## Dependencies
