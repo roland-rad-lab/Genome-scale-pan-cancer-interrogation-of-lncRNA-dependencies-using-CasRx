@@ -2,7 +2,7 @@
 
 path_to_gRNA_design="./" #change this to the path your saved the pipeline in
 scripts_dir="${path_to_gRNA_design}/modules"
-input_file="${path_to_gRNA_design}/data/exons_for_prediction.csv"
+input_file="${path_to_gRNA_design}/test_run/data/exons_for_prediction.csv"
 organism="human"
 guide_length="23"
 extension="7"
@@ -15,11 +15,11 @@ threads="40"
 sequence_lower_range="0"
 sequence_upper_range="1"
 restriction_sequences="CGTCTC"
-prediction_dir="${path_to_gRNA_design}/data/prediction"
-filtered_prediction_dir="${path_to_gRNA_design}/data/prediction_filtered"
-mkdir ${filtered_prediction_dir}
-offtarget_index="${path_to_gRNA_design}/data/offtarget_index/bowtie2_index_22_09/off_targets_lnc_and_coding_22_09"
-output_folder="${path_to_gRNA_design}/data"
+prediction_dir="${path_to_gRNA_design}/test_run/results/prediction"
+filtered_prediction_dir="${path_to_gRNA_design}/test_run/results/prediction_filtered"
+mkdir -p ${filtered_prediction_dir}
+offtarget_index="${path_to_gRNA_design}/test_run/data/offtarget_index/bowtie2_index_22_09/off_targets_lnc_and_coding_22_09"
+output_folder="${path_to_gRNA_design}/test_run/results"
 
 #run predictions
 Rscript ${scripts_dir}/gRNA_prediction.R \
@@ -52,4 +52,5 @@ Rscript ${scripts_dir}/Cas13_array_design.R \
     ${restriction_sequences} \
     ${threads} \
     ${output_folder} \
-    ${scripts_dir}
+    ${scripts_dir} \
+    ${filtered_prediction_dir}

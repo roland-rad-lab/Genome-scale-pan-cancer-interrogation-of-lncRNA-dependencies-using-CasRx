@@ -80,6 +80,7 @@ output_folder <- args[13]
 registerDoParallel(threads)
 path_to_scripts <- args[14]
 path_to_scripts <- paste0(path_to_scripts, "/")
+filtered_prediction_dir <- args[15]
 source(paste(path_to_scripts,"/scripts/predict.R", sep = ""))
 source(paste(path_to_scripts,"/scripts/trim_sequence.R", sep = ""))
 source(paste(path_to_scripts,"/scripts/extend_spacer.R", sep = ""))
@@ -202,7 +203,7 @@ clust <- makeCluster(40, type = "FORK")
 #  library(rlist)
 #  })
 predictions <- parApply(clust, ids, 1, function(x){
-  file <- read.csv(paste("/media/rad/HDD3/Riccardo/projects/ALBAROSSA_v1_paper/code_availability/gRNA_design/test_data/prediction_filtered/", x["IDs"], "_CasRxguides_filtered.csv", sep = ""), header = T)#read the result table, where the guides are
+  file <- read.csv(paste(filtered_prediction_dir, "/", x["IDs"], "_CasRxguides_filtered.csv", sep = ""), header = T)#read the result table, where the guides are
   file <- file %>% 
     filter(quartiles >= quality_threshold) %>% #filter everything lower than the quality threshold
     arrange(desc(standardizedGuideScores), GuideName)
@@ -250,8 +251,8 @@ predictions <- parApply(clust, ids, 1, function(x){
 })
 stopCluster(clust)
 
-dir.create("./score_tables_parallel")
-dir.create("./score_images_parallel")
+# dir.create("./score_tables_parallel")
+# dir.create("./score_images_parallel")
 output_file <- paste0(output_folder, "/prediction.csv")
 file.create(output_file)
 names_of_table <- c("target", "guide", "score", "quartile", paste("spacer", 1:as.numeric(final_tab[2]), sep = "")) #col.names = names_of_table
