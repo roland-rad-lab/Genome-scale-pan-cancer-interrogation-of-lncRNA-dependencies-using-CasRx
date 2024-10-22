@@ -304,10 +304,12 @@ In order to run the pipeline the following dependencies have to be downloaded:
 - - farver (v2.0.3)
 
 ## Running the Pipeline
-The pipeline can be run by launching the script _run_prediction.sh_ on the command line. All the parameters can be tweaked inside the script in order to design arrays for the desired targets, following the specifications given above.
-In order for the off-target filtering step to work, a bowtie2 index of a reference containing the targeted transcripts and other transcripts the users would consider as off-targets (e.g. protein coding genes) should be provided. All the gRNAs mapping to more than a transcript in the reference will be removed.
+To run the pipeline, simply launch the script _run\_prediction.sh_ from the command line. All parameters can be adjusted within the script to design arrays targeting the desired sequences, according to the specifications outlined above.
+
+During the off-target filtering step, if a gRNAs is mapping to multiple transcripts in the reference, it will be excluded from the results. In order for the off-target filtering step to run correctly, you will need a Bowtie2 index that includes the targeted transcripts as well as any additional transcripts considered as potential off-targets (e.g., protein-coding genes). Due to size limitations, our Bowtie2 index is not available on GitHub. However, you can download it using this link: https://drive.google.com/file/d/1uWJb8qFVxp4j3RnRbY7fB-txuAQOYUTB/view?usp=sharing. Alternatively, you can use a custom-made Bowtie2 index.
 
 ```sh
 cd ${pipeline_directory}
 bash run_prediction.sh
 ```
+
